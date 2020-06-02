@@ -18,5 +18,8 @@ class Batch(models.Model):
     fg = models.IntegerField(default=1000)
     ibu = models.IntegerField(default=0)
 
+    def __str__(self) -> str:
+        return "{} - {}".format(self.beer.name, self.brew_date)
+
     def calculate_abv(self) -> float:
         return (self.og - self.fg) * 0.13125

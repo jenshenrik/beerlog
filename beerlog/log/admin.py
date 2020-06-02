@@ -4,6 +4,7 @@ from .models import Beer, Batch
 # Register your models here.
 
 class BatchInline(admin.TabularInline):
+    show_change_link = True
     verbose_name = 'Batch'
     verbose_name_plural = 'Batches'
     extra = 0
@@ -22,3 +23,4 @@ class LogAdmin(admin.ModelAdmin):
             ]
 
 admin.site.register(Beer, LogAdmin)
+admin.site.register(Batch)
